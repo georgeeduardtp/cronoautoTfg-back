@@ -1,0 +1,5 @@
+28/10/2025
+----------
+1.Creadas capas controller, service, entity y el mapper para Cars
+2.Ha habido problemas con flyway, ya que hibernate se ejecutaba primero y entonces cuando flyway entraba no podiamos hacer alter sequence en la base de datos 
+    -La solucion fue borrar el alter sequence para que flyway no intentase modificar lo mismo que Hibernate
