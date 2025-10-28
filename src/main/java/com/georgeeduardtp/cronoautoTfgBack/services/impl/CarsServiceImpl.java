@@ -1,0 +1,31 @@
+package com.georgeeduardtp.cronoautoTfgBack.services.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.georgeeduardtp.cronoautoTfgBack.dto.response.CarsCardResponse;
+import com.georgeeduardtp.cronoautoTfgBack.mapper.CarMapper;
+import com.georgeeduardtp.cronoautoTfgBack.persistance.jpa.entity.repository.CarsJpaRepository;
+import com.georgeeduardtp.cronoautoTfgBack.services.CarsService;
+
+@Service
+public class CarsServiceImpl implements CarsService {
+
+
+    private final CarsJpaRepository carsRepository;
+    @Autowired
+    public CarsServiceImpl(CarsJpaRepository carsRepository) {
+        this.carsRepository = carsRepository;
+    }
+
+    @Override
+    public List<CarsCardResponse> getAllCars() {
+      return this.carsRepository.findAll().stream()
+              .map(CarMapper::toCarsCardResponse) //toCarsCardResponse es un método estático de la clase CarMapper que convierte un CarsEntity en un CarsCardResponse
+              .toList();
+        
+    }
+    
+}

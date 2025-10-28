@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cronoauto
+    username: user
+    password: secret
+    # driver-class-name: org.postgresql.Driver   # opcional, se infiere por la URL
+  jpa:
+    hibernate:
+      ddl-auto: validate    # Primera vez para ejecutar Flyway, luego cambiar a validate
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
