@@ -36,6 +36,6 @@ CREATE INDEX IF NOT EXISTS idx_cars_created_at ON cars(created_at DESC);
 
 INSERT INTO cars (brand, model, car_type, year, color, mileage, tags, engine_type, price, original_price, image_url)
 VALUES
-('Toyota', 'Corolla', 'Sedan', 2020, 'Red', 15000, ARRAY['economical', 'compact']::TEXT[], 'Gasolina', 20000, 22000, 'http://example.com/images/toyota_corolla.jpg'),
-('Ford', 'Mustang', 'Coupe', 2019, 'Blue', 10000, ARRAY['sporty', 'powerful']::TEXT[], 'Gasolina', 30000, 35000, 'http://example.com/images/ford_mustang.jpg'),
-('Tesla', 'Model 3', 'Sedan', 2021, 'White', 5000, ARRAY['electric', 'modern']::TEXT[], 'Eléctrico', 40000, 45000, 'http://example.com/images/tesla_model3.jpg');
+('Toyota', 'Corolla', 'Sedan', 2020, 'Red', 15000, ARRAY['economical', 'compact']::TEXT[], 'Gasolina', 20000, 22000, 'https://www.carscoops.com/wp-content/uploads/2022/09/2023-Toyota-GR-Corolla-copy.jpg'),
+('Ford', 'Mustang', 'Coupe', 2019, 'Blue', 10000, ARRAY['sporty', 'powerful']::TEXT[], 'Gasolina', 30000, 35000, 'https://s1.cdn.autoevolution.com/images/news/2022-mustang-shelby-gt500-heritage-edition-looks-fancy-wearing-brittany-blue-metallic-201824_1.jpg'),
+('Tesla', 'Model 3', 'Sedan', 2021, 'White', 5000, ARRAY['electric', 'modern']::TEXT[], 'Eléctrico', 40000, 45000, 'https://tse2.mm.bing.net/th/id/OIP.cZn-LkcIKeiCCW-yXvPwqAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3');

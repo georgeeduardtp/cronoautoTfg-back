@@ -9,6 +9,7 @@ public record CarsCardResponse(
     String car_type,
     String imageUrl,    
     List<String> tags,
+    String engine_type,
     Integer price,
     Integer original_price
 

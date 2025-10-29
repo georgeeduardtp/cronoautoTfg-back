@@ -12,6 +12,7 @@ public class CarMapper {
             carEntity.getCarType(),
             carEntity.getImageUrl(),
             carEntity.getTags(),
+            carEntity.getEngineType(),
             carEntity.getPrice(),
             carEntity.getOriginalPrice()
      );
