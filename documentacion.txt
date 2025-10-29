@@ -7,3 +7,5 @@
 29/10/2025
 ----------
 1.Creado el request
+2.Creado response detallado
+2.Creado el endpoint del post , la implementacion

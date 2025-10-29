@@ -30,7 +30,14 @@ public class CarMapper {
         carEntity.getTags(),
         carEntity.getEngineType(),
         carEntity.getPrice(),
-        carEntity.getOriginalPrice()
+        carEntity.getOriginalPrice(),
+        carEntity.getPotencia(),
+        carEntity.getTransmission(),
+        carEntity.getMotor(),
+       
+        carEntity.getDescription(),
+        carEntity.getPropietarios(),
+        carEntity.getPuertas()
     );
  }
 }

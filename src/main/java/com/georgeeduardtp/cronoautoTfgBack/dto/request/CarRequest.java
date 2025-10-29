@@ -12,7 +12,13 @@ public record CarRequest(
     List<String> tags,
     String engine_type,
     Integer price,
-    Integer original_price
+    Integer original_price,
+    Integer potencia,
+    String transmission,
+    String motor,
+    String description,
+    Integer propietarios,
+    Integer puertas
     
 ) {
 

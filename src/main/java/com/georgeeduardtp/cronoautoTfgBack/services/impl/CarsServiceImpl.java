@@ -44,6 +44,14 @@ public class CarsServiceImpl implements CarsService {
         carEntity.setEngineType(carRequest.engine_type());
         carEntity.setPrice(carRequest.price());
         carEntity.setOriginalPrice(carRequest.original_price());
+
+        carEntity.setPotencia(carRequest.potencia());
+        carEntity.setTransmission(carRequest.transmission());
+        carEntity.setMotor(carRequest.motor());
+        carEntity.setDescription(carRequest.description());
+        carEntity.setPropietarios(carRequest.propietarios());
+        carEntity.setPuertas(carRequest.puertas());
+        
         this.carsRepository.save(carEntity);
         return CarMapper.toCarsDetailResponse(carEntity);
     }

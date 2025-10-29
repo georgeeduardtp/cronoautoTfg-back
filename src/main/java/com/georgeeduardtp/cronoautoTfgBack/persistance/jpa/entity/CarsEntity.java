@@ -52,6 +52,25 @@ public class CarsEntity {
     @Column(name = "image_url")
     private String imageUrl;
 
+    @Column
+    private Integer potencia;
+
+    @Column
+    private String transmission;
+
+    @Column
+    private String motor;
+
+ 
+    @Column(name = "description")
+    private String description;
+
+    @Column
+    private Integer propietarios;
+
+    @Column
+    private Integer puertas;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
@@ -62,7 +81,8 @@ public class CarsEntity {
     }
 
     public CarsEntity(Long id, String brand, String model, String carType,String imageUrl, Integer year , Integer mileage,
-            List<String> tags, String engineType, Integer price, Integer originalPrice) {
+            List<String> tags, String engineType, Integer price, Integer originalPrice, Integer potencia, String transmission,
+            String motor, String description, Integer propietarios, Integer puertas) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -74,8 +94,13 @@ public class CarsEntity {
         this.engineType = engineType;
         this.price = price;
         this.originalPrice = originalPrice;
+        this.potencia = potencia;
+        this.transmission = transmission;
+        this.motor = motor;
         
-        
+        this.description = description;
+        this.propietarios = propietarios;
+        this.puertas = puertas;
     }
 
     public Long getId() {
@@ -171,6 +196,49 @@ public class CarsEntity {
     }
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Integer getPotencia() {
+        return potencia;
+    }
+    public void setPotencia(Integer potencia) {
+        this.potencia = potencia;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
+    }
+
+    public String getMotor() {
+        return motor;
+    }
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
+
+    
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getPropietarios() {
+        return propietarios;
+    }
+    public void setPropietarios(Integer propietarios) {
+        this.propietarios = propietarios;
+    }
+
+    public Integer getPuertas() {
+        return puertas;
+    }
+    public void setPuertas(Integer puertas) {
+        this.puertas = puertas;
     }
 
 }
