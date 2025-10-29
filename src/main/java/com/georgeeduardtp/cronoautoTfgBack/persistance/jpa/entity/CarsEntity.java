@@ -61,6 +61,23 @@ public class CarsEntity {
     public CarsEntity() {
     }
 
+    public CarsEntity(Long id, String brand, String model, String carType,String imageUrl, Integer year , Integer mileage,
+            List<String> tags, String engineType, Integer price, Integer originalPrice) {
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.carType = carType;
+        this.imageUrl = imageUrl;
+        this.year = year;
+        this.mileage = mileage;
+        this.tags = tags;
+        this.engineType = engineType;
+        this.price = price;
+        this.originalPrice = originalPrice;
+        
+        
+    }
+
     public Long getId() {
         return id;
     }
