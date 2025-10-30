@@ -17,10 +17,12 @@ public record CarsDetailResponse(
     Integer potencia,
     String transmission,
     String motor,
-    
+    String etiquetaAmbiental,
     String description,
     Integer propietarios,
-    Integer puertas
+    Integer puertas,
+    Boolean destacado
+    
 ) {
 
     

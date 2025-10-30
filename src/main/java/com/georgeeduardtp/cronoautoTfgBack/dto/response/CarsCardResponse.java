@@ -11,8 +11,8 @@ public record CarsCardResponse(
     List<String> tags,
     String engine_type,
     Integer price,
-    Integer original_price
-
+    Integer original_price,
+    Boolean destacado
 ) {
 
 }

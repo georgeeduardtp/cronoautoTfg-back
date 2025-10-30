@@ -32,6 +32,13 @@ public class CarsServiceImpl implements CarsService {
     }
 
     @Override
+    public CarsDetailResponse getCarById(Long id) {
+        CarsEntity carEntity = this.carsRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Car not found with id: " + id));
+        return CarMapper.toCarsDetailResponse(carEntity);
+    }
+
+    @Override
     public CarsDetailResponse createCar(CarRequest carRequest) {
         CarsEntity carEntity = new CarsEntity();
         carEntity.setBrand(carRequest.brand());
@@ -44,16 +51,21 @@ public class CarsServiceImpl implements CarsService {
         carEntity.setEngineType(carRequest.engine_type());
         carEntity.setPrice(carRequest.price());
         carEntity.setOriginalPrice(carRequest.original_price());
-
+        carEntity.setEtiquetaAmbiental(carRequest.etiquetaAmbiental());
         carEntity.setPotencia(carRequest.potencia());
         carEntity.setTransmission(carRequest.transmission());
         carEntity.setMotor(carRequest.motor());
         carEntity.setDescription(carRequest.description());
         carEntity.setPropietarios(carRequest.propietarios());
         carEntity.setPuertas(carRequest.puertas());
-        
+        carEntity.setDestacado(carRequest.destacado());
         this.carsRepository.save(carEntity);
         return CarMapper.toCarsDetailResponse(carEntity);
+    }
+
+    @Override
+    public void deleteCar(Long id) {
+        this.carsRepository.deleteById(id);
     }
     
 }

@@ -10,4 +10,7 @@ public interface CarsService {
 
     List<CarsCardResponse> getAllCars();
     CarsDetailResponse createCar(CarRequest carRequest);
+    CarsDetailResponse getCarById(Long id);
+    void deleteCar(Long id);
+    
 }

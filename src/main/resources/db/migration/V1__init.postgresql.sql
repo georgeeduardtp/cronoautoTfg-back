@@ -17,9 +17,11 @@ CREATE TABLE IF NOT EXISTS cars (
     potencia INTEGER,
     transmission VARCHAR(50),
     motor VARCHAR(50),
+    etiqueta_ambiental VARCHAR(50),
     description VARCHAR(2000),
     propietarios INTEGER,
     puertas INTEGER,
+    destacado BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );

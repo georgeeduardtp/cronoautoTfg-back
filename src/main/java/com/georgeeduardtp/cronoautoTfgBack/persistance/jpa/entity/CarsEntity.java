@@ -62,6 +62,9 @@ public class CarsEntity {
     private String motor;
 
  
+    @Column(name = "etiqueta_ambiental")
+    private String etiquetaAmbiental;
+
     @Column(name = "description")
     private String description;
 
@@ -70,6 +73,9 @@ public class CarsEntity {
 
     @Column
     private Integer puertas;
+
+    @Column
+    private Boolean destacado;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -82,7 +88,7 @@ public class CarsEntity {
 
     public CarsEntity(Long id, String brand, String model, String carType,String imageUrl, Integer year , Integer mileage,
             List<String> tags, String engineType, Integer price, Integer originalPrice, Integer potencia, String transmission,
-            String motor, String description, Integer propietarios, Integer puertas) {
+            String motor, String etiquetaAmbiental, String description, Integer propietarios, Integer puertas, Boolean destacado) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -97,10 +103,11 @@ public class CarsEntity {
         this.potencia = potencia;
         this.transmission = transmission;
         this.motor = motor;
-        
+        this.etiquetaAmbiental = etiquetaAmbiental;
         this.description = description;
         this.propietarios = propietarios;
         this.puertas = puertas;
+        this.destacado = destacado;
     }
 
     public Long getId() {
@@ -240,5 +247,16 @@ public class CarsEntity {
     public void setPuertas(Integer puertas) {
         this.puertas = puertas;
     }
-
+    public String getEtiquetaAmbiental() {
+        return etiquetaAmbiental;
+    }
+    public void setEtiquetaAmbiental(String etiquetaAmbiental) {
+        this.etiquetaAmbiental = etiquetaAmbiental;
+    }
+    public Boolean getDestacado() {
+        return destacado;
+    }
+    public void setDestacado(Boolean destacado) {
+        this.destacado = destacado;
+    }
 }

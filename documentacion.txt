@@ -6,6 +6,15 @@
 
 29/10/2025
 ----------
-1.Creado el request
-2.Creado response detallado
-2.Creado el endpoint del post , la implementacion
+1.Creado el CarRequest
+2.Creado CarDetailResponse, la cual usaremos para crear coches y para ver toda la informacion de un coche
+3.Creado el endpoint del post , e implementado en el front
+4.Añadidos mas atributos al post
+
+30/10/2025
+-----------
+1.Creado endpoint de delete
+2.Creado Endpoint de getCarById
+3.Hoy he trasteado un poco con mongoDb porque estoy pensando en usar base no relacional
+4.Añadido atributo a carDetailResponse(etiquetaAmbiental)
+5.Añadido atributo destacado, a la base de datos, pensado para manejar que coches aparecen en destacdo

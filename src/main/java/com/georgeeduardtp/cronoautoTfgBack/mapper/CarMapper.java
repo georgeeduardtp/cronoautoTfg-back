@@ -15,7 +15,8 @@ public class CarMapper {
             carEntity.getTags(),
             carEntity.getEngineType(),
             carEntity.getPrice(),
-            carEntity.getOriginalPrice()
+            carEntity.getOriginalPrice(),
+            carEntity.getDestacado()
      );
  }
  public static CarsDetailResponse toCarsDetailResponse(CarsEntity carEntity) {
@@ -34,10 +35,11 @@ public class CarMapper {
         carEntity.getPotencia(),
         carEntity.getTransmission(),
         carEntity.getMotor(),
-       
+        carEntity.getEtiquetaAmbiental(),
         carEntity.getDescription(),
         carEntity.getPropietarios(),
-        carEntity.getPuertas()
+        carEntity.getPuertas(),
+        carEntity.getDestacado()
     );
  }
 }
