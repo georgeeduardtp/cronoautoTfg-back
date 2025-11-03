@@ -10,7 +10,7 @@ spring:
     show-sql: true
     properties:
       hibernate.format_sql: true
-  jwt:
+jwt:
   app:
     jwtSecret: thisIsMysecregtfrdesww233eggtffeeddgkjjhhtdhttebd54ndhdhfhhhshs8877465sbbdd
     jwtExpirationMs: 86400000

@@ -58,3 +58,37 @@ VALUES
 ('Chevrolet', 'Malibu', 'Sedan', 2020, 'White', 11000, ARRAY['american', 'spacious']::TEXT[], 'Gasolina', 27000, 29000, 'https://example.com/chevrolet-malibu.jpg', 160, 'Automático', '1.5L Turbo', 'ECO', 'Sedán americano espacioso con tecnología moderna.', 1, 4, false),
 ('Mazda', 'Mazda6', 'Sedan', 2021, 'Red', 7000, ARRAY['sporty', 'premium']::TEXT[], 'Gasolina', 32000, 34000, 'https://example.com/mazda6.jpg', 227, 'Automático', '2.5L Turbo', 'ECO', 'Sedán deportivo con diseño elegante y manejo excepcional.', 1, 4, true),
 ('Subaru', 'Legacy', 'Sedan', 2020, 'Blue', 13000, ARRAY['awd', 'safe']::TEXT[], 'Gasolina', 29000, 31000, 'https://example.com/subaru-legacy.jpg', 182, 'CVT', '2.5L', 'ECO', 'Sedán con tracción integral estándar y excelentes calificaciones de seguridad.', 2, 4, false);
+
+
+-- 1. Crear la tabla de Roles (para ROLE_USER, ROLE_OWNER, ROLE_ADMIN)
+CREATE TABLE roles (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL
+);
+
+-- 2. Crear la tabla de Usuarios
+CREATE TABLE users (
+    id BIGSERIAL PRIMARY KEY,
+    username VARCHAR(20) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(120) NOT NULL
+);
+
+-- 3. Añadir las constraints 'unique' de la anotación @Table
+ALTER TABLE users
+    ADD CONSTRAINT UK_users_username UNIQUE (username),
+    ADD CONSTRAINT UK_users_email UNIQUE (email);
+
+-- 4. Crear la tabla intermedia para la relación @ManyToMany
+CREATE TABLE user_roles (
+    user_id BIGINT NOT NULL,
+    role_id INTEGER NOT NULL,
+    PRIMARY KEY (user_id, role_id),
+    CONSTRAINT FK_user_roles_user FOREIGN KEY (user_id) REFERENCES users(id),
+    CONSTRAINT FK_user_roles_role FOREIGN KEY (role_id) REFERENCES roles(id)
+);
+
+-- 5. ¡IMPORTANTE! Insertar los roles base que tu aplicación necesita
+INSERT INTO roles(name) VALUES('ROLE_USER');
+INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
+INSERT INTO roles(name) VALUES('ROLE_ADMIN');

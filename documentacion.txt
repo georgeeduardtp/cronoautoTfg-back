@@ -18,3 +18,14 @@
 3.Hoy he trasteado un poco con mongoDb porque estoy pensando en usar base no relacional
 4.Añadido atributo a carDetailResponse(etiquetaAmbiental)
 5.Añadido atributo destacado, a la base de datos, pensado para manejar que coches aparecen en destacdo
+
+03/11/2025
+----------
+1.Creado package models: 
+                Erole
+                Role
+                User
+2.Todos los models necesitan un repository
+                RoleREpository - ERole, Role        
+                UserRepository - User
+3.Creado package security
