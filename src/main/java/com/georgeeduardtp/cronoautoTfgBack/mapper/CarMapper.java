@@ -1,8 +1,8 @@
-package com.georgeeduardtp.cronoautoTfgBack.mapper;
+package com.georgeeduardtp.cronoautotfgback.mapper;
 
-import com.georgeeduardtp.cronoautoTfgBack.dto.response.CarsCardResponse;
-import com.georgeeduardtp.cronoautoTfgBack.dto.response.CarsDetailResponse;
-import com.georgeeduardtp.cronoautoTfgBack.persistance.jpa.entity.CarsEntity;
+import com.georgeeduardtp.cronoautotfgback.dto.response.CarsCardResponse;
+import com.georgeeduardtp.cronoautotfgback.dto.response.CarsDetailResponse;
+import com.georgeeduardtp.cronoautotfgback.persistance.jpa.entity.CarsEntity;
 
 public class CarMapper {
  public static CarsCardResponse toCarsCardResponse(CarsEntity carEntity) {

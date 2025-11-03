@@ -1,10 +1,10 @@
-package com.georgeeduardtp.cronoautoTfgBack.services;
+package com.georgeeduardtp.cronoautotfgback.services;
 
 import java.util.List;
 
-import com.georgeeduardtp.cronoautoTfgBack.dto.request.CarRequest;
-import com.georgeeduardtp.cronoautoTfgBack.dto.response.CarsCardResponse;
-import com.georgeeduardtp.cronoautoTfgBack.dto.response.CarsDetailResponse;
+import com.georgeeduardtp.cronoautotfgback.dto.request.CarRequest;
+import com.georgeeduardtp.cronoautotfgback.dto.response.CarsCardResponse;
+import com.georgeeduardtp.cronoautotfgback.dto.response.CarsDetailResponse;
 
 public interface CarsService {
 

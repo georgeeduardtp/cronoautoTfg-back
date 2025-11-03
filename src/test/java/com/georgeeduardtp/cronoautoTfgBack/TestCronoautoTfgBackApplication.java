@@ -2,6 +2,8 @@ package com.georgeeduardtp.cronoautoTfgBack;
 
 import org.springframework.boot.SpringApplication;
 
+import com.georgeeduardtp.cronoautotfgback.CronoautoTfgBackApplication;
+
 public class TestCronoautoTfgBackApplication {
 
 	public static void main(String[] args) {

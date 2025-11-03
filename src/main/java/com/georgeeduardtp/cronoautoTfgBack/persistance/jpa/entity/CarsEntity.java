@@ -1,4 +1,4 @@
-package com.georgeeduardtp.cronoautoTfgBack.persistance.jpa.entity;
+package com.georgeeduardtp.cronoautotfgback.persistance.jpa.entity;
 
 import java.time.LocalDateTime;
 import java.util.List;

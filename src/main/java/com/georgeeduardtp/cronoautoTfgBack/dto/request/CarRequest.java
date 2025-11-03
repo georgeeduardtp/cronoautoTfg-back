@@ -1,4 +1,4 @@
-package com.georgeeduardtp.cronoautoTfgBack.dto.request;
+package com.georgeeduardtp.cronoautotfgback.dto.request;
 
 import java.util.List;
 

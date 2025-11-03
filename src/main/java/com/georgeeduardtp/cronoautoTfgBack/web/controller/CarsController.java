@@ -1,4 +1,4 @@
-package com.georgeeduardtp.cronoautoTfgBack.web.controller;
+package com.georgeeduardtp.cronoautotfgback.web.controller;
 
 import java.util.List;
 
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.georgeeduardtp.cronoautoTfgBack.dto.request.CarRequest;
-import com.georgeeduardtp.cronoautoTfgBack.dto.response.CarsCardResponse;
-import com.georgeeduardtp.cronoautoTfgBack.dto.response.CarsDetailResponse;
-import com.georgeeduardtp.cronoautoTfgBack.services.CarsService;
+import com.georgeeduardtp.cronoautotfgback.dto.request.CarRequest;
+import com.georgeeduardtp.cronoautotfgback.dto.response.CarsCardResponse;
+import com.georgeeduardtp.cronoautotfgback.dto.response.CarsDetailResponse;
+import com.georgeeduardtp.cronoautotfgback.services.CarsService;
 
 @RestController
 @CrossOrigin(origins = "*")
