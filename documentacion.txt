@@ -29,3 +29,14 @@
                 RoleREpository - ERole, Role        
                 UserRepository - User
 3.Creado package security
+
+
+04/11/2025
+----------
+1. Hemos tenido problemas de CORS y de authorization al hacer el get de los /coches en el front 
+    -Las respuestas de CORS no estaban manejadas por spring security y se bloqueaba la peticion
+    -Hemos activado el cors y lo hemos configurado en WebSecurityConfig, en SecurityFilterChain con .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+    -Hemoscreado corsConfigurationSource donde hemos permitido metodos,headers
+    -Permitimos metodos preflight
+    -Permitimos el acceso al metodo publico GET /cars
+    -**En un futuro habrá que cambiar el cross origins del car controlles para usar spring security**

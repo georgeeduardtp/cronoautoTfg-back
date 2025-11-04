@@ -18,6 +18,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.http.HttpMethod;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 @EnableMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig {
@@ -43,7 +47,8 @@ public class WebSecurityConfig {
         // Updated configuration for Spring Security 6.x
         http
                 .csrf(csrf -> csrf.disable()) // Disable CSRF
-                .cors(cors -> cors.disable()) // Disable CORS (or configure if needed)
+                .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Enable and configure CORS
+                
                 .exceptionHandling(exceptionHandling ->
                         exceptionHandling.authenticationEntryPoint(unauthorizedHandler)
                 )
@@ -52,11 +57,28 @@ public class WebSecurityConfig {
                 )
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
+                                // Allow preflight requests
+                                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                                // Allow public GET access to cars (list and detail)
+                                .requestMatchers(HttpMethod.GET, "/cars/**").permitAll()
                                 .requestMatchers("/api/auth/**", "/api/test/all").permitAll() // Use 'requestMatchers' instead of 'antMatchers'
                                 .anyRequest().authenticated()
                 );
         // Add the JWT Token filter before the UsernamePasswordAuthenticationFilter
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        // Allow all origins during development. Use specific origins in production.
+        configuration.setAllowedOriginPatterns(java.util.List.of("*"));
+        configuration.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(java.util.List.of("*"));
+        configuration.setAllowCredentials(true);
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 }
